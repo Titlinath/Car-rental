@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RideFiesta - Contact Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #2d3748;
+            color: #edf2f7;
+        }
+
+        header {
+            background-color: #1a202c;
+            color: #edf2f7;
+            padding: 1em;
+            text-align: center;
+        }
+
+        header nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header nav ul li {
+            position: relative;
+            margin-right: 20px;
+        }
+
+        header nav a {
+            color: #edf2f7;
+            text-decoration: none;
+        }
+
+        header nav a.active {
+            color: #e2e8f0;
+        }
+
+        header nav ul li:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #1a202c;
+            border: 1px solid #2d3748;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+            z-index: 10;
+        }
+
+        .dropdown-menu a {
+            color: #edf2f7;
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #2d3748;
+        }
+
+        .dropdown-button {
+            background-color: #1a202c;
+            color: #edf2f7;
+            border: 1px solid #2d3748;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        .dropdown-button:hover {
+            background-color: #2d3748;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #1a202c;
+            border: 1px solid #2d3748;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+            z-index: 10;
+        }
+
+        .dropdown-content a {
+            color: #edf2f7;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #2d3748;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2em;
+        }
+
+        .contact-section {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2em;
+            background-color: #1a202c;
+            border: 1px solid #2d3748;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-section h1, .contact-section h2 {
+            color: #edf2f7;
+        }
+
+        .contact-info, .map, .nearby-places, .contact-form {
+            margin-bottom: 20px;
+            padding: 1em;
+            background-color: #2d3748;
+            border-radius: 5px;
+        }
+
+        .contact-info h2, .map h2, .nearby-places h2, .contact-form h2 {
+            margin-top: 0;
+        }
+
+        .contact-info p, .nearby-places ul, .contact-form input, .contact-form textarea {
+            color: #edf2f7;
+        }
+
+        .contact-info a {
+            color: #f6ad55;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #cbd5e0;
+            border-radius: 5px;
+            background-color: #1a202c;
+            color: #edf2f7;
+        }
+
+        .contact-form button[type="submit"] {
+            background-color: #f6ad55;
+            color: #1a202c;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contact-form button[type="submit"]:hover {
+            background-color: #ed8936;
+        }
+
+        footer {
+            background-color: #1a202c;
+            color: #edf2f7;
+            padding: 1em;
+            text-align: center;
+            clear: both;
+        }
+
+        footer ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        footer li {
+            margin-right: 20px;
+        }
+
+        footer a {
+            color: #edf2f7;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #e2e8f0;
+        }
+
+        .payment {
+            margin-top: 10px;
+        }
+
+        .payment img {
+            width: 50px;
+            height: 30px;
+            margin: 0 10px;
+        }
+
+        .navbar-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 1em;
+        }
+
+        .navbar-buttons a {
+            background-color: #f6ad55;
+            color: #1a202c;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 0 10px;
+        }
+
+        .navbar-buttons a:hover {
+            background-color: #ed8936;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar-buttons">
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="nav-button">Home</a></li>
+                    <li class="dropdown">
+                        <button class="dropdown-button">About Us</button>
+                        <div class="dropdown-content">
+                            <a href="ourstory.html">Our Story</a>
+                            <a href="team.html">Our Team</a>
+                            <a href="careers.html">Careers</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <button class="dropdown-button">Car Rentals</button>
+                        <div class="dropdown-content">
+                            <a href="short-term.html">Short Term Rentals</a>
+                            <a href="long-term.html">Long Term Rentals</a>
+                            <a href="luxury.html">Luxury Rentals</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <button class="dropdown-button">Deals</button>
+                        <div class="dropdown-content">
+                            <a href="discounts.html">Discounts</a>
+                            <a href="offers.html">Special Offers</a>
+                            <a href="promotions.html">Promotions</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <button class="dropdown-button">Blog</button>
+                        <div class="dropdown-content">
+                            <a href="latest-posts.html">Latest Posts</a>
+                            <a href="tips.html">Car Rental Tips</a>
+                            <a href="reviews.html">Customer Reviews</a>
+                        </div>
+                    </li>
+                    <li><a href="contact.html" class="nav-button active">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+    </header>
+    <main class="main-content">
+        <section class="contact-section">
+            <h1>Contact Us</h1>
+            <p>Get in touch with RideFiesta for all your car rental needs.</p>
+            <div class="contact-info">
+                <h2>Our Location</h2>
+                <p>60/1, Alexandra Court, Jawaharlal Nehru Rd, opposite Hamro Momo, Sreepally, Bhowanipore, Kolkata, West Bengal 700020</p>
+                <p>Phone Number: +123 456 7890</p>
+                <p>Email: <a href="mailto:RideFiestal4@gmail.com">RideFiestal4@gmail.com</a></p>
+                <p>Working Hours: Mon-Sat: 9.00-11.00</p>
+            </div>
+
+            <div class="map">
+                <h2>View Larger Map</h2>
+                <iframe src="https://www.google.com/maps/embed?..." width="100%" height="300" frameborder="0" allowfullscreen></iframe>
+            </div>
+
+            <div class="nearby-places">
+                <h2>Nearby Places</h2>
+                <ul>
+                    <li>Black Brick Cafe - Cafe</li>
+                    <li>Nandan Hall - Cinemahall</li>
+                </ul>
+            </div>
+
+            <div class="contact-form">
+                <h2>Send Us a Message</h2>
+                <form id="contact-form">
+                    <input id="name" type="text" placeholder="Your Name" required>
+                    <input id="email" type="email" placeholder="Your Email" required>
+                    <input id="subject" type="text" placeholder="Your Subject" required>
+                    <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit" id="send-button">SEND MESSAGE</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 RideFiesta. All Rights Reserved.</p>
+        <div class="payment">
+            <img src="visa.png" alt="Visa">
+            <img src="mastercard.png" alt="MasterCard">
+            <img src="upi.png" alt="UPI">
+        </div>
+    </footer>
+    
+    <script>
+        document.getElementById("contact-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var subject = document.getElementById("subject").value;
+            var message = document.getElementById("message").value;
+    
+            if (name === "" || email === "" || subject === "" || message === "") {
+                alert("Please fill in all fields.");
+                return;
+            }
+
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "https://example.com/send-message", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.send("name=" + encodeURIComponent(name) + "&email=" + encodeURIComponent(email) + "&subject=" + encodeURIComponent(subject) + "&message=" + encodeURIComponent(message));
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    alert("Message sent successfully!");
+                    document.getElementById("contact-form").reset();
+                } else {
+                    alert("Failed to send message. Please try again.");
+                }
+            };
+        });
+    </script>
+</body>
+</html>

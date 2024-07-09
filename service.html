@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root {
+        --ocean-depth: #233267;
+        --blue-lagoon: #21439C;
+        --sand-castle: #E1CEB6;
+        --shoreline: #FFE6CC;
+        --gold: #FFD700; 
+        --gold-dark: #F4C300; 
+    }
+    
+    body {
+        font-family: 'Playfair Display', serif;
+        margin: 0;
+        padding: 0;
+        background-color: var(--ocean-depth);
+        color: var(--shoreline);
+    }
+    
+    .navbar {
+        padding: 1rem;
+        background-color: var(--blue-lagoon);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .navbar .logo {
+        color: var(--shoreline);
+        text-decoration: none;
+        font-size: 1.5rem;
+    }
+    
+    .nav-menu {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 1rem;
+    }
+    
+    .nav-menu li {
+        display: inline;
+    }
+    
+    .nav-menu a {
+        color: var(--shoreline);
+        text-decoration: none;
+        padding: 0.5rem 1.5rem;
+        font-size: 1rem;
+        background-color: var(--gold);
+        border-radius: 0.5rem;
+        font-weight: bold;
+    }
+    
+    .nav-menu a:hover {
+        background-color: var(--gold-dark);
+    }
+    
+    .header {
+        text-align: center;
+        padding: 2rem;
+        background-color: var(--blue-lagoon);
+        color: var(--shoreline);
+    }
+    
+    .header h1 {
+        margin: 0;
+        font-size: 2.5rem;
+    }
+    
+    .header h2 {
+        margin: 1rem 0;
+        font-size: 1.5rem;
+    }
+    
+    .header p {
+        font-size: 1rem;
+        color: var(--sand-castle);
+    }
+    
+    .services {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 2rem;
+    }
+    
+    .card {
+        position: relative;
+        width: 45%;
+        margin: 1rem;
+        padding: 1.5rem;
+        background-color: var(--sand-castle);
+        border: 0.25rem solid var(--blue-lagoon);
+        box-shadow: 0.063rem 0.063rem 1.25rem 0.375rem rgb(0 0 0 / 53%);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .card:hover {
+        transform: translateY(-0.5rem);
+        box-shadow: 0.125rem 0.125rem 1.5rem 0.5rem rgb(0 0 0 / 73%);
+    }
+    
+    .card h3 {
+        margin-top: 0;
+        color: var(--blue-lagoon);
+    }
+    
+    .card p {
+        color: var(--ocean-depth);
+    }
+    
+    .card .circle {
+        position: absolute;
+        top: -1rem;
+        left: -1rem;
+        width: 5rem;
+        height: 5rem;
+        background: var(--shoreline);
+        border-radius: 50%;
+        clip-path: circle(50% at 50% 50%);
+    }
+    
+    @media (max-width: 768px) {
+        .card {
+            width: 90%;
+        }
+    
+        .nav-menu {
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        .nav-menu a {
+            padding: 1rem;
+        }
+    }
+    
+    .footer {
+        padding: 1rem;
+        background-color: var(--blue-lagoon);
+        color: var(--shoreline);
+        text-align: center;
+    }
+    
+    .footer .social-media {
+        margin: 1rem 0;
+    }
+    
+    .footer .social-media a {
+        margin: 0 0.5rem;
+    }
+    
+    .footer .social-media img {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .footer p {
+        margin: 0;
+    }
+  </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo">Your Company</a>
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Our Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="signup.html">Sign Up</a></li>
+        </ul>
+      </nav>
+  <header class="header">
+    <h1>Our Services</h1>
+    <h2>Premium Car Rental Services Tailored to Your Needs</h2>
+    <p>Welcome to our Services page! At [Your Company Name], we pride ourselves on providing top-notch car rental services designed to meet all your travel needs. Whether you're looking for comprehensive insurance coverage, reliable roadside assistance, flexible rental plans, or luxury vehicles, we have you covered. Explore our main services below to find out how we can enhance your rental experience.</p>
+  </header>
+  <section class="services">
+    <div class="card">
+      <h3>Comprehensive Insurance Coverage</h3>
+      <p>Offer a variety of insurance options to ensure customers feel secure and protected during their rental period. Highlight full coverage plans that include collision damage, theft protection, and liability insurance.</p>
+      <p>Benefits: Peace of mind, financial protection, hassle-free claims process.</p>
+    </div>
+    <div class="card">
+      <h3>24/7 Roadside Assistance</h3>
+      <p>Provide around-the-clock roadside assistance to help customers with any emergencies or breakdowns. This can include services like towing, flat tire changes, jump starts, and lockout assistance.</p>
+      <p>Benefits: Safety, convenience, quick response time.</p>
+    </div>
+    <div class="card">
+      <h3>Flexible Rental Plans</h3>
+      <p>Offer a variety of rental plans to suit different needs, including short-term rentals, long-term leases, and one-way rentals. Highlight the flexibility in terms of duration, mileage, and vehicle swaps.</p>
+      <p>Benefits: Customizable plans, cost-efficiency, tailored solutions for individuals and businesses.</p>
+    </div>
+    <div class="card">
+      <h3>Luxury and Premium Car Rentals</h3>
+      <p>Provide a selection of high-end luxury and premium vehicles for special occasions, business trips, or those who want to travel in style. Emphasize the top-tier brands, superior comfort, and advanced features of these cars.</p>
+      <p>Benefits: Prestige, comfort, high performance, enhanced driving experience.</p>
+    </div>
+  </section>
+  <footer class="p-4 bg-gray-800 text-white text-center">
+    <div class="flex justify-center mb-4">
+      <a href="https://www.facebook.com" class="text-white mx-2 text-2xl" aria-label="Facebook">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+          <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+        </svg>
+      </a>    
+      <a href="https://www.twitter.com" class="text-white mx-2 text-2xl" aria-label="Twitter">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+          <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334q.002-.211-.006-.422A6.7 6.7 0 0 0 16 3.542a6.7 6.7 0 0 1-1.889.518 3.3 3.3 0 0 0 1.447-1.817 6.5 6.5 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.32 9.32 0 0 1-6.767-3.429 3.29 3.29 0 0 0 1.018 4.382A3.3 3.3 0 0 1 .64 6.575v.045a3.29 3.29 0 0 0 2.632 3.218 3.2 3.2 0 0 1-.865.115 3 3 0 0 1-.614-.057 3.28 3.28 0 0 0 3.067 2.277A6.6 6.6 0 0 1 .78 13.58a6 6 0 0 1-.78-.045A9.34 9.34 0 0 0 5.026 15"/>
+        </svg>
+      </a>
+      <a href="https://www.whatsapp.com" class="text-white mx-2 text-2xl" aria-label="WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+          <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+        </svg>
+      </a>
+    </div>
+    <p class="text-white mb-2">Contact us at: RideFiestal4@gmail.com</p>
+    <p class="text-white">Phone: +123 456 7890</p>
+  </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const cards = document.querySelectorAll('.card');
+    
+    cards.forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        const circle = card.querySelector('.circle');
+        circle.style.clipPath = 'circle(110% at 50% 50%)';
+      });
+  
+      card.addEventListener('mouseleave', () => {
+        const circle = card.querySelector('.circle');
+        circle.style.clipPath = 'circle(50% at 50% 50%)';
+      });
+    });
+  });
+  </script>
+</body>
+</html>

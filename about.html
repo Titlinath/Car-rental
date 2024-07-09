@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rental Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <style>
+        body {
+            background-color: #36454F; /* Charcoal Gray */
+        }
+        .navbar {
+            background-color: #001f3f; /* Navy Blue */
+        }
+        .navbar a {
+            color: #FFD700; /* Gold */
+        }
+        .sidebar {
+            background-color: #001f3f; /* Navy Blue */
+            color: #FFFFFF; /* White */
+        }
+        .content {
+            background-color: #FFFFFF; /* White */
+        }
+        .analysis {
+            background-color: #C0C0C0; /* Silver */
+            color: #36454F; /* Charcoal Gray */
+        }
+        .button-gold {
+            background-color: #FFD700; /* Gold */
+            color: #001f3f; /* Navy Blue */
+        }
+    </style>
+</head>
+
+<body class="flex flex-col min-h-screen">
+    <!-- Top Navigation Bar -->
+    <header class="navbar py-4">
+        <nav class="container mx-auto flex justify-between">
+            <div>
+                <button id="nav-menu-button" class="text-2xl">☰</button>
+                <span class="text-2xl ml-4">RideFiesta</span>
+            </div>
+            <ul class="flex space-x-4">
+                <li><a href="index.html" class="hover:underline">Home</a></li>
+                <li><a href="service.html" class="hover:underline">Services</a></li>
+                <li><a href="blog.html" class="hover:underline">Blog</a></li>
+                <li><a href="contact.html" class="hover:underline">Contact</a></li>
+                <li><a href="login.html" class="hover:underline">Login</a></li>
+                <li><a href="signup.html" class="hover:underline">Signup</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex flex-1">
+        <!-- Sidebar -->
+        <aside id="sidebar" class="sidebar w-64 p-4 hidden">
+            <h2 class="text-lg font-bold mb-4">User Section</h2>
+            <ul>
+                <li><a href="#" class="block py-2 hover:underline">User Profile</a></li>
+                <li><a href="#" class="block py-2 hover:underline">User's Favourite Cars</a></li>
+                <li><a href="#" class="block py-2 hover:underline">User's Orders</a></li>
+            </ul>
+        </aside>
+
+        <!-- Central Content -->
+        <section class="content flex-1 p-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <!-- Car 1 -->
+                <div class="p-4 border rounded shadow-md">
+                    <img src="path_to_car_image_1.jpg" alt="Car 1" class="w-full h-48 object-cover mb-2">
+                    <h3 class="text-lg font-bold mb-2">Car Name 1</h3>
+                    <p class="text-gray-700 mb-2">Description of car 1. Lorem ipsum dolor sit amet.</p>
+                    <button class="button-gold px-4 py-2 rounded">Book Now</button>
+                </div>
+                <!-- Car 2 -->
+                <div class="p-4 border rounded shadow-md">
+                    <img src="path_to_car_image_2.jpg" alt="Car 2" class="w-full h-48 object-cover mb-2">
+                    <h3 class="text-lg font-bold mb-2">Car Name 2</h3>
+                    <p class="text-gray-700 mb-2">Description of car 2. Lorem ipsum dolor sit amet.</p>
+                    <button class="button-gold px-4 py-2 rounded">Book Now</button>
+                </div>
+                <!-- More cars as needed -->
+            </div>
+        </section>
+
+        <!-- Right Sidebar for Analysis and Charts -->
+        <aside class="analysis w-64 p-4">
+            <h2 class="text-lg font-bold mb-4">Analysis</h2>
+            <section class="mb-4">
+                <h3 class="font-bold mb-2">Rentals</h3>
+                <p class="mb-1">250 Vehicles Rented</p>
+                <p class="mb-1">₹90L in Revenue</p>
+                <p class="mb-1">85% Fleet Utilization</p>
+            </section>
+            <section class="mb-4">
+                <h3 class="font-bold mb-2">Recent Rentals</h3>
+                <p class="mb-1">Toyota Camry - 3 Days (₹15,000)</p>
+                <p class="mb-1">Honda Civic - 2 Days (₹10,000)</p>
+                <p class="mb-1">Ford Mustang - 1 Day (₹8,000)</p>
+            </section>
+            <section class="mb-4">
+                <h3 class="font-bold mb-2">User-Friendly Vehicles</h3>
+                <canvas id="user-friendly-vehicles-chart" width="200" height="200"></canvas>
+            </section>
+        </aside>
+    </main>
+
+    <!-- Bottom Navigation Bar -->
+    <footer class="navbar py-4">
+        <nav class="container mx-auto flex justify-between">
+            <button id="nav-menu-footer-button" class="text-2xl">☰</button>
+            <span class="text-2xl">RideFiesta</span>
+        </nav>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+    <script>
+        const navMenuButton = document.getElementById('nav-menu-button');
+        const navMenuFooterButton = document.getElementById('nav-menu-footer-button');
+        const sidebar = document.getElementById('sidebar');
+
+        navMenuButton.addEventListener('click', () => {
+            sidebar.classList.toggle('hidden');
+        });
+
+        navMenuFooterButton.addEventListener('click', () => {
+            sidebar.classList.toggle('hidden');
+        });
+
+        // Chart configuration
+        const ctx = document.getElementById('user-friendly-vehicles-chart').getContext('2d');
+        new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['India', 'Foreign'],
+                datasets: [{
+                    label: 'User-Friendly Vehicles',
+                    data: [40, 60],
+                    backgroundColor: [
+                        'rgba(0, 255, 255, 0.2)', // Cyan
+                        'rgba(65, 105, 225, 0.2)' // Royal Blue
+                    ],
+                    borderColor: [
+                        'rgba(0, 255, 255, 1)',
+                        'rgba(65, 105, 225, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+    </script>
+</body>
+
+</html>
